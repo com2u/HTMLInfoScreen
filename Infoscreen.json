@@ -1,0 +1,77 @@
+[
+	{
+		"page": 0,
+		"Titel": "Now playing",
+		"Lines": 3,
+		"Duration": 18,
+		"Active": 1,
+		"text0": "19:00h Technology, robots, villains and heroes",
+		"text1": "all created before your eyes! Impro-Theater",
+		"text2": "mit 'Impro 9 from outer Space'"
+	},
+	{
+		"page": 1,
+		"Titel": "Freitag, 13.4.2018",
+		"Lines": 4,
+		"Duration": 18,
+		"Active": 1,
+		"text0": "19:00 Technology, robots, villains and heroes",
+		"text1": "20:00 Der Däne und die Drums",
+		"text2": "20:15 Science Fiction Slam + Science vs. Fiction",
+		"text3": "22:15 Im Ufo nach Nirgendwo, Schlagershow"
+	},
+	{
+		"page": 2,
+		"Titel": "Samstag, 14.4.2018",
+		"Lines": 6,
+		"Duration": 18,
+		"Active": 1,
+		"text0": "14:30 Animationsfilm-Screening",
+		"text1": "17:00 Speaker Tim Brügmann mit + Loving the ALIEN",
+		"text2": "18:00 Brainboost Neurofeedback",
+		"text3": "19:30 Marsellus Moon (Part 1)",
+		"text4": "20:15 Sniffing The Extra-Terrestrial",
+		"text5": "21:15 Marsellus Moon (Part 2)"
+	},
+	{
+		"page": 3,
+		"Titel": "Sonntag, 15.4.2018",
+		"Lines": 3,
+		"Duration": 18,
+		"Active": 1,
+		"text0": "13:30 Hebocon + Schrott Roboter Contest",
+		"text1": "16:00 Animationsfilm-Screening",
+		"text2": "18:00 Sci-Fi Literatur: 'Und was bleibt am Ende vom Menschen'"
+	},
+	{
+		"page": 4,
+		"Titel": "Dauerausstellung",
+		"Lines": 7,
+		"Duration": 18,
+		"Active": 1,
+		"text0": "Foyer:  all colours are beautyful",
+		"text1": "Halle1: Open Smell Lab mit Klara Ravat",
+		"text2": "Halle1: Ex unda + Media",
+		"text3": "Halle1: Myth of Theuth + Boardgame",
+		"text4": "Halle2: Standardabweichung",
+		"text5": "Halle2: Lights & Guts",
+		"text6": "Halle3: Virtual Reality"
+	},
+	{
+		"page": 5,
+		"Titel": "SiFi",
+		"Lines": 1,
+		"Duration": 18,
+		"Active": 1,
+		"text0": "Science und Fiction Festival 2018"
+	},
+	{
+		"page": 6,
+		"Titel": "Twitter",
+		"Lines": 2,
+		"Duration": 18,
+		"Active": 1,
+		"text0": "#mucsff2018",
+		"text1": ""
+	}
+]

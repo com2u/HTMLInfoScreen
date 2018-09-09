@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "outDir": "./compiled/",
+    "target": "es6",
+    "module": "none"
+  }
+}
