@@ -2,7 +2,7 @@ let croud: Croud
 let croud2: Croud
 let con: Controller
 let layer
-let txt
+let txt = new InfoText()
 
 let thisPG: PGraphics
 let pg: PGraphics
@@ -18,20 +18,6 @@ function setup() {
   croud2 = null;
   con = new Controller();
   layer = new BackgroundLayer();
-  // txt = new PText();
-  txt = {
-    loadJSON() {
-      console.log('Mocked Load JSON')
-    },
-    getText() {
-      console.log('Mocked get text')
-      return 'text'
-    },
-    getNumber() {
-      console.log('Mocked get Number')
-      return 2
-    }
-  }
   createCanvas(600, 600);
 
   simulation = true;
@@ -40,18 +26,20 @@ function setup() {
   stroke(0);
   background(255);
 
-  txt.loadJSON();
-  con.init().then(() => {
-    loaded = true
-    typo = con.seq().backgroundPicture;
-    pg = con.seq().textGraphics;
-    croud = new Croud(con.numberOfGizmo);
-    croud2 = new Croud(con.numberOfGizmo2);
-    croud.reseedGizmo(pg, con.seq().reseedMode);
-    croud.targetGizmo(pg, con.seq().targetMode);
-    croud2.reseedGizmo(typo, con.seq().reseedMode);
-    nextSequence();
-  })
+  txt
+    .loadJSON()
+    .then(() => con.init())
+    .then(() => {
+      loaded = true
+      typo = con.seq().backgroundPicture;
+      pg = con.seq().textGraphics;
+      croud = new Croud(con.numberOfGizmo);
+      croud2 = new Croud(con.numberOfGizmo2);
+      croud.reseedGizmo(pg, con.seq().reseedMode);
+      croud.targetGizmo(pg, con.seq().targetMode);
+      croud2.reseedGizmo(typo, con.seq().reseedMode);
+      nextSequence();
+    })
 }
 
 function seqStep() {
@@ -86,7 +74,7 @@ function nextSequence(): PImage {
       tint(255, 127);
       // bgImage.resize(width, height);
       background(bgImage);
-      bgImage.blend(pg, 0, 0, width, height, 0, 0, width, height, 'OVERLAY');
+      // bgImage.blend(pg, 0, 0, width, height, 0, 0, width, height, 'OVERLAY');
       return pg;
     case 4:
       return typo;
@@ -98,9 +86,9 @@ function nextSequence(): PImage {
         0, 0, typo.width, typo.height
       )
       tint(255, 127);
-      // bgImage.resize(width, height);
+      bgImage.resize(width, height);
       background(bgImage);
-      bgImage.blend(pg, 0, 0, width, height, 0, 0, width, height, 'OVERLAY');
+      // bgImage.blend(pg, 0, 0, width, height, 0, 0, width, height, 'OVERLAY');
       return bgImage;
   }
 

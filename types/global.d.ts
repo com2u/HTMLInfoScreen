@@ -66,3 +66,5 @@ declare class PText {
 }
 
 declare function copy(image: PImage, sx: number, sy: number, sw: number, sh: number, dx: number, dy: number, dw: number, dh: number): PImage
+
+declare function loadJSON<Result>(url: string, callback?: (result: Result) => void, errorCallback?: (error: any) => void): Result

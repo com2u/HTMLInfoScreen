@@ -1,41 +1,38 @@
 class InfoText {
-  subtitel = "";
-  screenJSON;
-  screen;
+  screen: {}
+  textContent
 
   loadJSON() {
-    try {
-      if (InetAddress.getByName("www.com2u.de").isReachable(1000)) {
-        screenJSON = loadJSONArray("http://www.com2u.de/Infoscreen/Infoscreen.json");
-      } else {
-        screenJSON = loadJSONArray("Infoscreen.json");
-      }
-    } catch (e) {
-      screenJSON = loadJSONArray("Infoscreen.json");
-    }
-
-    for (let i = 0; i < screenJSON.size(); i++) {
-
-      screen = screenJSON.getJSONObject(i);
-
-      let id = screen.getInt("page");
-      let title = screen.getString("Titel");
-      let lines = screen.getInt("Lines");
-
-      console.log(id + ", " + title + ", " + lines);
-    }
-
+    return fetchJSON('http://www.com2u.de/Infoscreen/Infoscreen.json')
+      .catch(e => fetchJSON('../Infoscreen.json'))
+      .then(result => this.textContent = result)
   }
 
   getText(page: number, search: string) {
-    screen = screenJSON.getJSONObject(page);
-    let s = screen.getString(search);
-    s = s.replace("\"", "");
+    this.screen = this.textContent[page];
+    let s = this.screen[search];
+    s = s.replace('"', '');
     return s;
   }
 
   getNumber(page: number, search: string) {
-    screen = screenJSON.getJSONObject(page);
-    return screen.getInt(search);
+    this.screen = this.textContent[page];
+    return Math.ceil(this.screen[search]);
   }
+}
+
+function findProperties(object: {}, startsWith: string) {
+  return Object
+    .keys(object)
+    .filter(key => key.startsWith(startsWith))
+}
+
+function fetchJSON(url: string) {
+  return new Promise((resolve, reject) => {
+    loadJSON(
+      url,
+      resolve,
+      reject
+    )
+  })
 }
